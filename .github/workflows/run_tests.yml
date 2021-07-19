@@ -27,8 +27,8 @@ jobs:
 
     - name: Create Docker Test Environment
       run: |
-      docker-compose up -d
-      npm run runMigrations
+        docker-compose up -d
+        npm run runMigrations
 
     - name: Run Tests
       run: npm run test
