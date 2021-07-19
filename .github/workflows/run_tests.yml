@@ -23,13 +23,12 @@ jobs:
         node-version: '14'
 
     - name: Install Required Local NPM Packages
-      run: npm install knex@0.95.4
+      run: npm install knex@0.95.4 ts-node@9.1.1
 
     - name: Create Docker Test Environment
-      run: docker-compose up -d
-
-    - name: Run Database Migrations
-      run: npm run runMigrations
+      run: |
+      docker-compose up -d
+      npm run runMigrations
 
     - name: Run Tests
       run: npm run test
