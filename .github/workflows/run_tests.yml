@@ -21,10 +21,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - run: npm install knex@0.95.4
-  
-    - name: Create Test Environment
-      run: npm run createDockerEnv
 
-    - name: Run Node Tests
-      run: npm test
+    - name: Install Required Local NPM Packages
+      run: npm install knex@0.95.4
+  
+    - name: Create Docker Test Environment
+      run: docker-compose up -d
+
+    - name: Run Database Migrations
+      run: npx knex --knexfile=../db/knexfile.ts migrate:latest
