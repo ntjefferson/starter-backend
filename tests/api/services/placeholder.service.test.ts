@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { squareId } from '../../api/services/placeholder.service';
+import { squareId } from '../../../api/services/placeholder.service';
 
 describe('placeholder.service', () => {
   describe('squareId', () => {
