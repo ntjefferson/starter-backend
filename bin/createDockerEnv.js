@@ -15,7 +15,7 @@ const fullSetup = async () => {
   while (retries) {
     try {
       cyanLog('🐘 Starting database migrations...');
-      execSync('npx knex --knexfile=./db/knexfile.js migrate:latest',
+      execSync('npx knex --knexfile=./db/knexfile.ts migrate:latest',
         { stdio: 'inherit' });
       break;
     } catch (err) {
@@ -31,7 +31,7 @@ const fullSetup = async () => {
   }
 
   cyanLog('🌱 Seeding the database...');
-  execSync('npx knex --knexfile=./db/knexfile.js seed:run',
+  execSync('npx knex --knexfile=./db/knexfile.ts seed:run',
     { stdio: 'inherit' });
 
   //   cyanLog('👋 Deleting unused docker images...');

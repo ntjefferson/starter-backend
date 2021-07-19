@@ -17,6 +17,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Install Required Local NPM Packages
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install knex@0.95.4
+  
     - name: Create Test Environment
       run: npm run createDockerEnv
 
