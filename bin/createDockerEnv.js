@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-import { execSync } from 'child_process';
+const { execSync } = require('child_process');
 
 process.env.DEV_DB_HOST = 'localhost';
 
-const cyanLog = (text: string) => console.log(`\x1b[36m${text}\x1b[0m`);
+const cyanLog = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
 
 const fullSetup = async () => {
   cyanLog('🐳 Creating docker containers...');

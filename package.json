@@ -8,7 +8,7 @@
     "server": "cross-env NODE_ENV=development nodemon -L server.ts",
     "test": "cross-env NODE_ENV=test mocha -r ts-node/register ./tests/**/*.test.ts --exit",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "createDockerEnv": "ts-node ./bin/createDockerEnv.ts"
+    "createDockerEnv": "node ./bin/createDockerEnv.js"
   },
   "keywords": [],
   "author": "",
