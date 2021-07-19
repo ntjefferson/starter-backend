@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import RedisHelper from '../../redis/RedisStore';
+import RedisHelper from '../../utils/RedisStore';
 
 describe('RedisStore', () => {
   beforeEach(() => {

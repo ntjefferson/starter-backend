@@ -7,6 +7,7 @@
     "start": "cross-env NODE_ENV=production node server.ts",
     "server": "cross-env NODE_ENV=development nodemon -L server.ts",
     "test": "cross-env NODE_ENV=test mocha -r ts-node/register ./tests/**/*.test.ts --exit",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "createDockerEnv": "ts-node ./bin/createDockerEnv.ts"
   },
   "keywords": [],
@@ -25,7 +26,6 @@
     "redis": "^3.1.2",
     "response-time": "^2.3.2",
     "sinon": "^11.1.1",
-    "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
   "devDependencies": {
@@ -37,7 +37,6 @@
     "@types/pg": "^7.14.11",
     "@types/redis": "^2.8.31",
     "@types/response-time": "^2.3.4",
-    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "chai": "^4.3.4",

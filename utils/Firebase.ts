@@ -1,6 +1,6 @@
 import firebase from 'firebase-admin';
 
-import { FIREBASE_CONFIG } from '../../config';
+import { FIREBASE_CONFIG } from '../config';
 
 class Firebase {
     private admin: firebase.app.App;

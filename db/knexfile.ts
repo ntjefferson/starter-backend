@@ -1,51 +1,11 @@
-require('dotenv').config({ path: `${__dirname}../../.env` });
+import { DEV_DB, PROD_DB } from '../config';
 
 const environtmentDb: any = {
-  test: {
-    client: 'pg',
-    connection: {
-      host: process.env.TEST_DB_HOST,
-      database: process.env.TEST_DB_NAME,
-      port: process.env.DEV_DB_PORT,
-      user: process.env.DEV_DB_USER,
-      password: process.env.DEV_DB_PASS,
-    },
-    migrations: {
-      directory: `${__dirname}/migrations`,
-    },
-    seeds: {
-      directory: `${__dirname}/seeds`,
-    },
-  },
-  development: {
-    client: 'pg',
-    connection: {
-      host: process.env.DEV_DB_HOST,
-      database: process.env.DEV_DB_NAME,
-      port: process.env.DEV_DB_PORT,
-      user: process.env.DEV_DB_USER,
-      password: process.env.DEV_DB_PASS,
-    },
-    migrations: {
-      directory: `${__dirname}/migrations`,
-    },
-    seeds: {
-      directory: `${__dirname}/seeds`,
-    },
-  },
-  production: {
-    client: 'pg',
-    searchPath: process.env.DB_SCHEMA,
-    connection: {
-      host: process.env.DB_HOST,
-      database: process.env.DB_NAME,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASS,
-    },
-  },
+  test: DEV_DB,
+  development: DEV_DB,
+  production: PROD_DB,
 };
 
-const environment = process.env.NODE_ENV || 'development';
+const environment = process.env.NODE_ENV || 'test';
 
 export default environtmentDb[environment];
