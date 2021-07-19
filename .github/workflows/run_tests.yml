@@ -24,12 +24,9 @@ jobs:
 
     - name: Install Required Local NPM Packages
       run: npm install knex@0.95.4
-      
-    - name: Test folder structure
-      run: ls
-  
+
     - name: Create Docker Test Environment
       run: docker-compose up -d
 
     - name: Run Database Migrations
-      run: npx knex --knexfile=../db/knexfile.ts migrate:latest
+      run: npx knex --knexfile=./db/knexfile.ts migrate:latest
