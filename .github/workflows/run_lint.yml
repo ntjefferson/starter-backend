@@ -23,7 +23,7 @@ jobs:
         node-version: '14'
 
     - name: Install Required Local NPM Packages
-      run: npm install eslint@7.25.0,
+      run: npm install eslint@7.25.0
 
     - name: Run Lint
       run: npm run lint
