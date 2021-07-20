@@ -8,7 +8,7 @@ import UnauthorizedError from '../errors/UnauthorizedError';
  */
 const verifyFirebase = async (req: Request, res: Response, next: NextFunction) => {
   const token = req.header('Authorization');
-  const { userId } = req.params;
+  // const { userId } = req.params;
 
   if (!token) {
     const err = new UnauthorizedError('No token, authorization denied.', null, 'This is a test');
