@@ -15,7 +15,7 @@ const fullSetup = async () => {
   while (retries) {
     try {
       cyanLog('🐘 Starting database migrations...');
-      execSync('npx knex --knexfile=./db/knexfile.ts migrate:latest',
+      execSync('npm run runMigrations',
         { stdio: 'inherit' });
       break;
     } catch (err) {
