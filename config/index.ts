@@ -47,11 +47,11 @@ export const PROD_DB: Record<string, string | Record<string, string | undefined>
   client: 'pg',
   searchPath: process.env.DB_SCHEMA || '',
   connection: {
-    host: process.env.DEV_DB_HOST || '',
-    database: process.env.DEV_DB_NAME || '',
-    port: process.env.DEV_DB_PORT || '',
-    user: process.env.DEV_DB_USER || '',
-    password: process.env.DEV_DB_PASS || '',
+    host: process.env.DB_HOST || '',
+    database: process.env.DB_NAME || '',
+    port: process.env.DB_PORT || '',
+    user: process.env.DB_USER || '',
+    password: process.env.DB_PASS || '',
   },
   migrations: {
     directory: `${__dirname}/migrations`,
